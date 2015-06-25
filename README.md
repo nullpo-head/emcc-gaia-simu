@@ -16,3 +16,23 @@ We ported xv6 to GAIA and created C89 compiler.
 To see the detail, visit https://github.com/wasabiz/xv6  
 The site of original xv6 is at http://pdos.csail.mit.edu/6.828/2014/xv6.html
 
+## Build instruction
+
+### Native Binary
+```sh
+make CC=gcc
+```
+And to run,
+```sh
+./sim xv6.img
+```
+
+### JS Version
+Just run
+```sh
+make
+```
+and you can run sim.js with node by
+```sh
+node sim.js xv6.img
+```
