@@ -1,0 +1,112 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JS xv6</title>
+    <script async type="text/javascript" src="term.js"></script>
+    <script async type="text/javascript" src="main.js"></script>
+    <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,900,700' rel='stylesheet' type='text/css'>
+</head>
+<style type="text/css">
+    body {
+        margin: 10px;
+        background-color: #EBE6E0;
+        color: #75716C;
+    }
+    a:link, a:visited {
+        color: #75716C;
+    }
+    main {
+        text-align: center;
+    }
+    #term {
+        display: inline-block;
+        text-align: left;
+        margin-bottom: 40px;
+    }
+    #term::after {
+        content: "";
+        display: block;
+        margin: 0 auto;
+        clear: both;
+    }
+    #text {
+        line-height: 1.5em;
+        display: block;
+        width: 80%;
+        margin: 0 auto;
+    }
+    p, ul {
+        display: inline-block;
+        text-align: left;
+        margin-bottom: 20px;
+    }
+    ul {
+        width: 500px;
+    }
+    h1 {
+        font-family: 'Source Sans Pro', sans-serif;
+        font-size: 45px;
+        font-weight: bolder;
+        color: #5C3570;
+    }
+    h3 {
+        font-family: 'Source Sans Pro', sans-serif;
+        margin-bottom: 0;
+        color: #5C3570;
+    }
+    footer {
+        background-color: #5C3570;
+        font-size: 0.8em;
+    }
+    b {
+        color: #5C3570;
+        font-family: 'Source Sans Pro', sans-serif;
+    }
+    #break {
+        padding: 50px 0 10px 0;
+        font-size: 2em;
+    }
+</style>
+<body>
+<main>
+    <article>
+    <h1>JS XV6</h1>
+    <div id="term"></div>
+    <div id="text">
+        <h3>What's this?</h3>
+        <p>
+            This is an online demo of our xv6 port to GAIA, the CPU we designed.<br>
+            JS porting is done by compiling our CPU simulator with <a href="http://kripken.github.io/emscripten-site/">Emscripten</a>.<br>
+            JS XV6 is <b>very very slow</b>, please be patient!!
+        </p> 
+        <h3>Command Examples</h3>
+        <ul>
+            <li><b>ls</b><br>
+                See what commands you can run. The PATH is fixed to "/".
+            </li>
+            <li><b>2048</b><br>
+                A popular game clone. Colorful and relatively fast enough to play.
+            </li>
+        </ul>
+        <h3>Don't Run</h3>
+        <ul>
+            <li><b>sl</b><br>
+                Very long. <br>
+                Run it if you would like to spend the rest of your life regretting your typo.
+            </li> 
+        </ul>
+        <div id="break"><b>...</b></div>
+        <h3>Links</h3>
+        <ul>
+            <li><b>Contact</b><br><a href="https://twitter.com/nullpo_head">@nullpo_head</a></li>
+            <li><b>This JS simulator repository</b><br><a href="https://github.com/nullpo-head/emcc-gaia-simu">https://github.com/nullpo-head/emcc-gaia-simu</a></li>
+            <li><b>XV6-GAIA repository</b><br><a href="https://github.com/wasabiz/xv6">https://github.com/wasabiz/xv6</a></li>
+            <li><b>Original simulator repository</b><br><a href="https://github.com/b-inary/gaia-software">https://github.com/b-inary/gaia-software</a></li>
+            <li><b>Original xv6</b><br><a href="http://pdos.csail.mit.edu/6.828/2014/xv6.html">http://pdos.csail.mit.edu/6.828/2014/xv6.html</a></li>
+        </ul>
+    </div>
+    </article>
+</main> 
+</body>
+</html>
