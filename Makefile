@@ -1,13 +1,19 @@
-SRC    = sim.c debug.c libfpu.a
-TARGET = sim
+SRC    = sim.c debug.c
+TARGET = sim.js
 
-CFLAGS = -Wall -Wextra -O2 -std=gnu99 -g
+CC = emcc
+CFLAGS = -Wall -Wextra -O3 -std=gnu99 -g $(EMCCFLAGS)
+ifneq ($(CC), emcc)
+    TARGET := $(basename $(TARGET))
+else
+    EMCCFLAGS = --embed-file xv6.img
+endif
 LDLIBS = -lm
 
 $(TARGET): $(SRC)
-	cc $(CFLAGS) $(SRC) $(LDLIBS) -o $(TARGET)
+	$(CC) $(CFLAGS) $(SRC) $(LDLIBS) -o $(TARGET)
 
 PHONY: clean
 clean:
-	rm -f $(TARGET) *.out *.out.s
+	rm -f $(TARGET) $(TARGET).mem *.out *.out.s
 
