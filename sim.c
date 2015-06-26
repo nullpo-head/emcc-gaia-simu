@@ -172,6 +172,19 @@ uint32_t to_physical(uint32_t addr)
     return tmp;
 }
 
+#ifdef __EMSCRIPTEN__
+int has_input()
+{
+    int res = EM_ASM_INT_V({return Module['stdin_buf'].length;});
+    return res > 0;
+}
+
+uint32_t serial_read()
+{
+    int res = EM_ASM_INT_V({return Module['stdin_buf'].shift() | 0;});
+    return res == 0 ? EOF : res;
+}
+#else
 int has_input()
 {
     int c;
@@ -187,6 +200,7 @@ uint32_t serial_read()
 {
     return getchar();
 }
+#endif
 
 void serial_write(uint32_t x)
 {
