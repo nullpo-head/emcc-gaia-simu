@@ -175,7 +175,7 @@ uint32_t to_physical(uint32_t addr)
 int has_input()
 {
     int c;
-    rewind(stdin);
+    clearerr(stdin);
     c = getchar();
     if (c == EOF)
         return 0;
