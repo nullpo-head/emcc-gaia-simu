@@ -12,13 +12,20 @@ worker.addEventListener('message', function(e) {
 
 window.addEventListener('load', function() {
 
-  term = new Terminal({cols: 80, rows: 24, useStyle: true, cusorBlink: true});
+  term = new Terminal({
+      cols: 80,
+      rows: 24,
+      useStyle: true,
+      cusorBlink: true,
+      fontFamily: "DejaVu Sans Mono, Liberation Mono, monospace",
+      fontSize: 11
+  });
 
-  term.on('data', function(str) {
+  term.onData(function(str) {
     worker.postMessage(str);
   });
 
-  term.on('title', function(title) {
+  term.onTitleChange(function(title) {
     document.title = title;
   });
 
